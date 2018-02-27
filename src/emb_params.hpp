@@ -16,7 +16,7 @@ public:
 	int batchsize;
 	string label;
 	bool flag_itemIntercept;
-	bool flag_step_schedule;		// step_schedule: 0=advi, 1=rmsprop, 2=adagrad
+	int flag_step_schedule;			// step_schedule: (0=advi), 1=rmsprop, 2=adagrad
 	int flag_likelihood;			// likelihood: 0=bernoulli, 1=one-vs-each, 3=within-group softmax, 4=exact softmax
 	int flag_shuffle;				// shuffle: -1=conditionally specified, 0=don't, 1+=yes
 	int flag_nsFreq;				// nsFreq: -1=uniform; 0=unigram; 1=unigram^(3/4); 2+=biased to item group
