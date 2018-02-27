@@ -57,7 +57,7 @@ Just replace `/your_path` with the actual path to the compiled file, and replace
 
 ## Options
 
-Here we describe the full list of options (it is a long list!). For a description of the data format or output files, see the next sections.
+Here we describe the full list of options (warning: it is a long list!). For a description of the data format or output files, see the next sections.
 
 **Options to configure the input/output.**
 
