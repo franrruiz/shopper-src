@@ -338,7 +338,7 @@ The code creates the output files within the directory specified with `-outdir <
 
 The files `param_XXX_YYY.tsv` contain the variational parameters corresponding to the latent variables (`alpha_c`, `rho_c`, etc.). For example, `param_alpha_mean.tsv` contains the variational mean and `param_alpha_std.tsv` contains the variational standard deviation corresponding to `alpha_c`.
 
-The format of these files is: `line_number`, `item_id` (or `group_id`), `value1`, `value2`, `value3`, `...`
+The columns of these files indicate: `line_number`, `item_id` (or `group_id`), `value1`, `value2`, `value3`, `...`
 
 For the Gaussian factors, there are two files for each variable, with the mean and standard deviation (ending in `_mean.tsv` and `_std.tsv`). For the gamma factors, there will be three files, with the mean, shape, and rate (ending in `_mean.tsv`, `_shp.tsv`, and `_rte.tsv`).
 
