@@ -60,11 +60,11 @@ public:
 		K = 50;
 		seed = 0;
 		rfreq = 1000;
-		saveCycle = 10000;
+		saveCycle = 5000;
 		negsamples = 50;
 		zeroFactor = 0.1;
 		batchsize = 1000;
-		Niter = 20000;
+		Niter = 12000;
 		flag_avgContext = true;
 		flag_itemIntercept = true;
 		flag_step_schedule = 1;

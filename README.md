@@ -167,7 +167,7 @@ Here we describe the full list of options (warning: it is a long list!). For a d
 
 ```
 -max-iterations <int>  maximum number of iterations of the variational inference procedure
-                       [default: 20000]
+                       [default: 12000]
 
 -batchsize <int>       number of baskets to be considered at each iteration of the SVI algorithm.
                        If <=0, use all baskets instead of minibatches;
@@ -202,7 +202,7 @@ Here we describe the full list of options (warning: it is a long list!). For a d
 
 -saveCycle <int>       saves the variational parameters to a file every this number of iterations
                        IMPORTANT: The files might be big in size. Make sure that you have enough disk space
-                       [default: 10000]
+                       [default: 5000]
 
 -label <string>        append this label to the output folder name
                        [example: '-label crazy-experiment']
