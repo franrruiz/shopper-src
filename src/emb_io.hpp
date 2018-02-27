@@ -810,8 +810,8 @@ public:
 	}
 
 	static void write_normalized_prices(my_data &data, const my_param &param) {
-		string filenameAvg = param.outdir+"/mean_prices.txt";
-		string filenameMin = param.outdir+"/min_prices.txt";
+		string filenameAvg = param.outdir+"/mean_prices.tsv";
+		string filenameMin = param.outdir+"/min_prices.tsv";
 		char buffer[200];
 		unsigned long long iName;
 		int i;
@@ -836,21 +836,21 @@ public:
 
 	static void write_telapsed(const string folder, int iter, time_t t_ini, time_t t_end) {
 		double elapsed_secs = difftime(t_end,t_ini);
-		write_line(folder+"/telapsed.txt",std::to_string(iter)+"\t"+std::to_string(elapsed_secs));
+		write_line(folder+"/telapsed.tsv",std::to_string(iter)+"\t"+std::to_string(elapsed_secs));
 	}
 
 	static void write_norm(const string outdir, int iter, double norm_rho, double norm_alpha) {
-		write_line(outdir+"/avg_norm.txt",std::to_string(iter)+"\t"+std::to_string(norm_rho)+"\t"+std::to_string(norm_alpha));
+		write_line(outdir+"/avg_norm.tsv",std::to_string(iter)+"\t"+std::to_string(norm_rho)+"\t"+std::to_string(norm_alpha));
 	}
 
 	static void write_norm(const string outdir, int iter, double norm_rho, double norm_alpha, double norm_theta) {
-		write_line(outdir+"/avg_norm.txt",std::to_string(iter)+"\t"+std::to_string(norm_rho)+"\t"+std::to_string(norm_alpha)+"\t"+std::to_string(norm_theta));
+		write_line(outdir+"/avg_norm.tsv",std::to_string(iter)+"\t"+std::to_string(norm_rho)+"\t"+std::to_string(norm_alpha)+"\t"+std::to_string(norm_theta));
 	}
 
 	static void write_max_file(const my_param &param, int duration, double val_llh, int why) {
 		char buffer[200];
 		sprintf(buffer,"%d\t%d\t%.9f\t%d",param.it,duration,val_llh,why);
-		write_line(param.outdir+"/max.txt",string(buffer));
+		write_line(param.outdir+"/max.tsv",string(buffer));
 	}
 	
 	static void write_matrix(string filename, std::map<unsigned long long,int> &ids, Matrix1D<var_pointmass> &M) {
@@ -1138,12 +1138,12 @@ public:
 		char buffer[100];
 		sprintf(buffer,"%d\t%.6f",param.it,logp);
 		string aux = string(buffer);
-		write_line(param.outdir+"/obj_function.txt",aux);
+		write_line(param.outdir+"/obj_function.tsv",aux);
 	}
 
 	static void write_vocab(my_data &data, const my_param &param) {
 		char buffer[300];
-		string filename = param.outdir+"/vocab.txt";
+		string filename = param.outdir+"/vocab.tsv";
 		unsigned long long iName;
 		int i;
 		for(const auto &it : data.item_ids) {

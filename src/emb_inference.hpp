@@ -1187,7 +1187,7 @@ public:
 
 		// Print to file (all lines)
 		if(writeFinalFile) {
-			string fname = param.outdir+"/test_all.txt";
+			string fname = param.outdir+"/test_all.tsv";
 			char buffer[500];
 			for(int ll=0; ll<T; ll++) {
 				if(test_valid_lines.get_object(ll)) {
@@ -1208,7 +1208,7 @@ public:
 		double llh_avg = sum_llh/static_cast<double>(n_valid_lines);
 
 		// Print to file (avg)
-		string fname = param.outdir+"/test.txt";
+		string fname = param.outdir+"/test.tsv";
 		char buffer[500];
 		sprintf(buffer,"%d\t%d\t%.9f\t%d\t%d",param.it,duration,llh_avg,n_valid_trans,n_valid_lines);
 		my_output::write_line(fname,string(buffer));
@@ -1285,10 +1285,10 @@ public:
 				string fname;
 				char buffer[500];
 				if(type_llh==0) {
-					fname = param.outdir+"/test_baskets_all_noChkout.txt";
+					fname = param.outdir+"/test_baskets_all_noChkout.tsv";
 					llh_print = llh_nocheckout;
 				} else {
-					fname = param.outdir+"/test_baskets_all.txt";
+					fname = param.outdir+"/test_baskets_all.tsv";
 					llh_print = llh_checkout;
 				}
 				int ll_max = T;
@@ -1337,11 +1337,11 @@ public:
 
 		// Print to file (avg)
 		char buffer[500];
-		string fname = param.outdir+"/test_baskets.txt";
+		string fname = param.outdir+"/test_baskets.tsv";
 		sprintf(buffer,"%d\t%d\t%.9f\t%d\t%d",param.it,duration,llh_avg_checkout,n_valid_trans,n_valid_lines);
 		my_output::write_line(fname,string(buffer));
 
-		fname = param.outdir+"/test_baskets_noChkout.txt";
+		fname = param.outdir+"/test_baskets_noChkout.tsv";
 		sprintf(buffer,"%d\t%d\t%.9f\t%d\t%d",param.it,duration,llh_avg_nocheckout,n_valid_trans,n_valid_lines);
 		my_output::write_line(fname,string(buffer));
 
@@ -1380,7 +1380,7 @@ public:
 
 		// Print to file (all lines)
 		if(writeFinalFile) {
-			string fname = param.outdir+"/validation_all.txt";
+			string fname = param.outdir+"/validation_all.tsv";
 			char buffer[500];
 			for(unsigned int ll=0; ll<data.obs_val.T; ll++) {
 				if(llh[ll] != myINFINITY) {
@@ -1402,7 +1402,7 @@ public:
 		double llh_avg = sum_llh/static_cast<double>(count);
 
 		// Print to file (avg)
-		string fname = param.outdir+"/validation.txt";
+		string fname = param.outdir+"/validation.tsv";
 		char buffer[500];
 		sprintf(buffer,"%d\t%d\t%.9f\t%d",param.it,duration,llh_avg,count);
 		my_output::write_line(fname,string(buffer));
