@@ -44,7 +44,7 @@ nvcc -std=c++11 -o shopper src/emb.cu `gsl-config --cflags --libs`
 + The [CTPL](https://github.com/vit-vit/CTPL/blob/master/ctpl_stl.h) thread pool library by Vitaliy Vitsentiy. It is included in this repo, so you do not need to download anything.
 
 
-## Running the code
+## Running the code
 
 
 You can run the code from a terminal with the line:
