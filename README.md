@@ -372,4 +372,4 @@ For the Gaussian factors, there are two files for each variable, with the mean a
 
 The code has been specifically designed for the datasets described in the paper. To accelerate computations, it computes the inner products `theta_u*alpha_c` and `rho_c*alpha_{c'}` for all user/item pairs and for all item/item pairs. Therefore, this implementation of Shopper requires storage capacity for the resulting user/item and item/item matrices.
 
-Depending on your system memory (and the GPU memory), you may run out of memory when the product `number_users x number_items` or `number_items x number_items` is above 10^9 or 10^10. In such case, try reducing either numbers (e.g., by grouping items according to their category).
+Depending on your system specifications (and the GPU memory), you may run out of memory when the product `number_users x number_items` or `number_items x number_items` is above 10^9 or 10^10. In such case, try reducing the dataset size (e.g., by grouping items according to their category, or by removing low-frequency items or users).
