@@ -150,7 +150,8 @@ Here we describe the full list of options (warning: it is a long list!). For a d
                        If -1, use the uniform distribution;
                        if 0, use the unigram distribution (based on the item frequencies);
                        if 1, use a smoothed unigram distribution (unigram raised to the power of 0.75);
-                       if >=2, use a distribution that is biased to upweight items in the same group as the target item (in proportion N:1)
+                       if >=2, use a distribution that is biased to upweight items in the same group as the target item (in proportion N:1).
+                       Relevant only if '-likelihood 0' or '-likelihood 1'
                        [default: -1]
 
 -shuffle <int>         shuffle the items in each basket at each iteration?
