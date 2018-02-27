@@ -52,7 +52,7 @@ You can run the code from a terminal with the line:
 /your_path/shopper [options]
 ```
 
-Just replace `/your_path` with the actual path to the compiled file, and replace `[options]` with a list of the options you would like to run the code with. These are some of the most important options; the full list is described below.
+Just replace `/your_path` with the actual path to the compiled file, and replace `[options]` with a list of the options you would like to run the code with. The full list is described below.
 
 
 ## Options
