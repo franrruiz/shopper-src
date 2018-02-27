@@ -840,17 +840,22 @@ public:
 	}
 
 	static void write_norm(const string outdir, int iter, double norm_rho, double norm_alpha) {
-		write_line(outdir+"/avg_norm.tsv",std::to_string(iter)+"\t"+std::to_string(norm_rho)+"\t"+std::to_string(norm_alpha));
+		return;
+		// write_line(outdir+"/avg_norm.tsv",std::to_string(iter)+"\t"+std::to_string(norm_rho)+"\t"+std::to_string(norm_alpha));
 	}
 
 	static void write_norm(const string outdir, int iter, double norm_rho, double norm_alpha, double norm_theta) {
-		write_line(outdir+"/avg_norm.tsv",std::to_string(iter)+"\t"+std::to_string(norm_rho)+"\t"+std::to_string(norm_alpha)+"\t"+std::to_string(norm_theta));
+		return;
+		//write_line(outdir+"/avg_norm.tsv",std::to_string(iter)+"\t"+std::to_string(norm_rho)+"\t"+std::to_string(norm_alpha)+"\t"+std::to_string(norm_theta));
 	}
 
 	static void write_max_file(const my_param &param, int duration, double val_llh, int why) {
+		return;
+		/*
 		char buffer[200];
 		sprintf(buffer,"%d\t%d\t%.9f\t%d",param.it,duration,val_llh,why);
 		write_line(param.outdir+"/max.tsv",string(buffer));
+		*/
 	}
 	
 	static void write_matrix(string filename, std::map<unsigned long long,int> &ids, Matrix1D<var_pointmass> &M) {
@@ -1122,7 +1127,7 @@ public:
 			write_matrix(param.outdir+"/param_theta"+label,data.user_ids,pvar.theta);
 		}
 		if(param.flag_itemIntercept) {
-			write_matrix(param.outdir+"/param_lambda0"+label,data.item_ids,pvar.lambda0);
+			write_matrix(param.outdir+"/param_lambda"+label,data.item_ids,pvar.lambda0);
 		}
 		if(param.flag_price>0) {
 			write_matrix(param.outdir+"/param_gamma"+label,data.user_ids,pvar.gamma);
