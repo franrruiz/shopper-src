@@ -1324,12 +1324,15 @@ public:
 
 		// Compute average
 		for(int ll=0; ll<T+data.test_Ntrans; ll++) {
-			if(ll<T && llh_nocheckout[ll]<=0.0) {
-				sum_llh_nocheckout += llh_nocheckout[ll];
-			} else if(ll>=T) {
+			if(ll<T) {
 				if(llh_checkout[ll]<=0.0) {
 					sum_llh_checkout += llh_checkout[ll];
 				}
+				if(llh_nocheckout[ll]<=0.0) {
+					sum_llh_nocheckout += llh_nocheckout[ll];
+				}
+			} else if(ll>=T && llh_checkout[ll]<=0.0) {
+				sum_llh_checkout += llh_checkout[ll];
 			}
 		}
 		double llh_avg_checkout = sum_llh_checkout/static_cast<double>(n_valid_trans);
