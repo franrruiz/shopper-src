@@ -1857,6 +1857,9 @@ void compute_val_likelihood_ll(int thread_id, my_data *data, const my_hyper *hyp
 				p_item[j] = -myINFINITY;
 			}
 		}
+		for(int &j : elem_context) {
+			p_item[j] = -myINFINITY;
+		}
 		// Compute log-lik
 		llh[ll] = p_item[i] - my_logsumexp(p_item,data->Nitems);
 	} else {
@@ -1902,6 +1905,9 @@ void compute_test_likelihood_ll(int thread_id, my_data *data, const my_hyper *hy
 			} else {
 				p_item[j] = -myINFINITY;
 			}
+		}
+		for(int &j : elem_context) {
+			p_item[j] = -myINFINITY;
 		}
 		// Compute log-lik
 		llh[ll] = p_item[i] - my_logsumexp(p_item,data->Nitems);
@@ -1956,6 +1962,9 @@ void compute_test_baskets_likelihood_tt(int thread_id, my_data *data, const my_h
 			for(int j=0; j<data->Nitems; j++) {
 				p_item[j] = my_infer::compute_mean(data,param,pvar,t,j,u,s,&elem_context,&argmax,eta_base);
 			}
+			for(int &j : elem_context) {
+				p_item[j] = -myINFINITY;
+			}
 			// Compute log-lik
 			llh_checkout[ll] = p_item[i] - my_logsumexp(p_item,data->Nitems);
 			// Compute log-lik without checkout item
@@ -1977,6 +1986,9 @@ void compute_test_baskets_likelihood_tt(int thread_id, my_data *data, const my_h
 		// Compute the mean for all items
 		for(int j=0; j<data->Nitems; j++) {
 			p_item[j] = my_infer::compute_mean(data,param,pvar,t,j,u,s,&elem_context,&argmax,eta_base);
+		}
+		for(int &j : elem_context) {
+			p_item[j] = -myINFINITY;
 		}
 		// Compute log-lik
 		llh_checkout[t+T] = p_item[i] - my_logsumexp(p_item,data->Nitems);
