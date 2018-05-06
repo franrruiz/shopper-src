@@ -1296,9 +1296,6 @@ public:
 					ll_max += data.test_Ntrans;
 				}
 				for(int ll=0; ll<ll_max; ll++) {
-					// Get (user,session)
-					u = data.test_user_per_trans.get_object(t);
-					s = data.test_session_per_trans.get_object(t);
 					// Get (trans,item)
 					if(ll<T) {
 						t = data.obs_test.y_trans[ll];
@@ -1307,6 +1304,9 @@ public:
 						t = ll-T;
 						i = i_checkout;
 					}
+					// Get (user,session)
+					u = data.test_user_per_trans.get_object(t);
+					s = data.test_session_per_trans.get_object(t);
 					// Get the id's 
 					unsigned long long u_id = data.find_by_value(data.user_ids,u);
 					unsigned long long s_id = data.find_by_value(data.session_ids,s);
