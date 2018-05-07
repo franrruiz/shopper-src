@@ -95,6 +95,9 @@ public:
 				param.noVal = true;
 			} else if(strcmp(argv[i], "-noTest") == 0) {
 				param.noTest = true;
+			} else if(strcmp(argv[i], "-thr_llh") == 0) {
+				val = string(argv[++i]);
+				param.thr_llh = std::stod(val);
 			} else if(strcmp(argv[i], "-eta") == 0) {
 				val = string(argv[++i]);
 				param.eta = std::stod(val);
@@ -766,6 +769,7 @@ public:
 		write_log(param.outdir," +valConsecutive="+std::to_string(param.valConsecutive));
 		write_log(param.outdir," +keepOnly="+std::to_string(param.lf_keepOnly));
 		write_log(param.outdir," +keepAbove="+std::to_string(param.lf_keepAbove));
+		write_log(param.outdir," +thr_llh="+std::to_string(param.thr_llh));
 		write_log(param.outdir," +threads="+std::to_string(param.Nthreads));
 
 		// Write initialization

@@ -1862,6 +1862,9 @@ void compute_val_likelihood_ll(int thread_id, my_data *data, const my_hyper *hyp
 		}
 		// Compute log-lik
 		llh[ll] = p_item[i] - my_logsumexp(p_item,data->Nitems);
+		if(llh[ll]<param->thr_llh) {
+			llh[ll] = param->thr_llh;
+		}
 	} else {
 		llh[ll] = myINFINITY;
 	}
@@ -1911,6 +1914,9 @@ void compute_test_likelihood_ll(int thread_id, my_data *data, const my_hyper *hy
 		}
 		// Compute log-lik
 		llh[ll] = p_item[i] - my_logsumexp(p_item,data->Nitems);
+		if(llh[ll]<param->thr_llh) {
+			llh[ll] = param->thr_llh;
+		}
 	} else {
 		llh[ll] = myINFINITY;
 	}
@@ -1967,11 +1973,17 @@ void compute_test_baskets_likelihood_tt(int thread_id, my_data *data, const my_h
 			}
 			// Compute log-lik
 			llh_checkout[ll] = p_item[i] - my_logsumexp(p_item,data->Nitems);
+			if(llh_checkout[ll]<param->thr_llh) {
+				llh_checkout[ll] = param->thr_llh;
+			}
 			// Compute log-lik without checkout item
 			if(i_checkout>=0) {
 				p_item[i_checkout] = -myINFINITY;
 			}
 			llh_nocheckout[ll] = p_item[i] - my_logsumexp(p_item,data->Nitems);
+			if(llh_nocheckout[ll]<param->thr_llh) {
+				llh_nocheckout[ll] = param->thr_llh;
+			}
 			// Add item i to context
 			elem_context.push_back(i);
 		} else {

@@ -34,6 +34,7 @@ public:
 	double gamma;
 	double stdIni;
 	double valTolerance;
+	double thr_llh;
 	string iniPath;
 	string iniFromGroup;
 	int Kgroup;
@@ -87,6 +88,7 @@ public:
 		valConsecutive = 5;
 		noVal = false;
 		noTest = false;
+		thr_llh = my_log(1.0e-10);
 		iniPath = "";
 		iniFromGroup = "";
 		Kgroup = 0;
