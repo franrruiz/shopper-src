@@ -834,18 +834,18 @@ public:
 				initialize_from_file(param.iniPath+"/param_gamma.txt",data.user_ids,gamma,param,true);
 				initialize_from_file(param.iniPath+"/param_beta.txt",data.itemgroup_ids,beta,param,true);
 			}
-
-			// initialize per-day effect variables
-			if(param.flag_day>0) {
-				if(param.iniPath=="") {
-					// initialize randomly
-					initialize_matrix_randomly(semilla,mu,val_ini,param.stdIni,false);
-					initialize_matrix_randomly(semilla,delta,val_ini,param.stdIni,false);
-				} else {
-					// initialize from file
-					initialize_from_file(param.iniPath+"/param_mu.txt",data.itemgroup_ids,mu,param,true);
-					initialize_from_file(param.iniPath+"/param_delta.txt",data.day_ids,delta,param,true);
-				}
+		}
+		
+		// initialize per-day effect variables
+		if(param.flag_day>0) {
+			if(param.iniPath=="") {
+				// initialize randomly
+				initialize_matrix_randomly(semilla,mu,val_ini,param.stdIni,false);
+				initialize_matrix_randomly(semilla,delta,val_ini,param.stdIni,false);
+			} else {
+				// initialize from file
+				initialize_from_file(param.iniPath+"/param_mu.txt",data.itemgroup_ids,mu,param,true);
+				initialize_from_file(param.iniPath+"/param_delta.txt",data.day_ids,delta,param,true);
 			}
 		}
 	}
