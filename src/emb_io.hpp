@@ -668,7 +668,9 @@ public:
 		if(param.flag_price>0) {
 			sa << "-price" << param.flag_price;
 			if(param.flag_normPrice) {
-				sa << "norm";
+				sa << "normAvg";
+			} else if(param.flag_normPrice_min) {
+				sa << "normMin";
 			}
 		}
 		if(param.flag_day>0) {
