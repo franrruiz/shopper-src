@@ -201,9 +201,6 @@ Here we describe the full list of options (warning: it is a long list!). For a d
                        Make sure that you set this value high enough to avoid computation bottlenecks
                        [default: 1000]
 
--thr_llh <double>      minimum log-likelihood assigned to each item at prediction time
-                       [default: -23.025850929940457]
-
 -saveCycle <int>       saves the variational parameters to a file every this number of iterations
                        IMPORTANT: The files might be big in size. Make sure that you have enough disk space
                        [default: 5000]

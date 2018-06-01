@@ -88,7 +88,7 @@ public:
 		valConsecutive = 5;
 		noVal = false;
 		noTest = false;
-		thr_llh = my_log(1.0e-10);
+		thr_llh = -100000;
 		iniPath = "";
 		iniFromGroup = "";
 		Kgroup = 0;

@@ -95,9 +95,6 @@ public:
 				param.noVal = true;
 			} else if(strcmp(argv[i], "-noTest") == 0) {
 				param.noTest = true;
-			} else if(strcmp(argv[i], "-thr_llh") == 0) {
-				val = string(argv[++i]);
-				param.thr_llh = std::stod(val);
 			} else if(strcmp(argv[i], "-eta") == 0) {
 				val = string(argv[++i]);
 				param.eta = std::stod(val);
