@@ -329,6 +329,10 @@ This other example creates two groups of items (with ids 1 and 2):
 
 The file `itemGroup.tsv` is also required if `-likelihood 3` or `-nsFreq <int>` is specified (with an integer >=2).
 
+**An example: Illustrative simulation.**
+
+As an example, the folder `dat` is provided. It contains the toy data that was used for the illustrative simulation described in the paper.
+
 
 ## Output
 
