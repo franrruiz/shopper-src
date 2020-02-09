@@ -331,7 +331,11 @@ The file `itemGroup.tsv` is also required if `-likelihood 3` or `-nsFreq <int>` 
 
 **An example: Illustrative simulation.**
 
-As an example, the folder `dat` is provided. It contains the toy data that was used for the illustrative simulation described in the paper.
+As an example, the folder `dat` is provided. It contains the toy data that was used for the illustrative simulation described in the paper. You can run it using the command line below:
+
+```
+./shopper -dir dat/illustrative_sim -outdir out -K 4 -itemIntercept 1 -userVec 3 -price 2 -normPrice 0 -days 0  -lookAhead 1 -negsamples 3 -eta 0.01 -rfreq 200000 -max-iterations 20000 -saveCycle 100000 -batchsize 100
+```
 
 
 ## Output
